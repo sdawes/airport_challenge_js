@@ -19,4 +19,15 @@ describe ('Feature Test', function() {
     expect(airport.planes()).toContain(plane);
   });
 
+  // As an air traffic controller
+  // To get passengers to a destination
+  // I want to instruct a plan to take off from
+  // an airport and confirm that it is no longer in the airport
+
+  it ('planes can be instructed to take off', function(){
+    plane.land(airport);
+    plane.takeOff(airport);
+    expect(airport.planes()).not.toContain(plane);
+  });
+
 });
